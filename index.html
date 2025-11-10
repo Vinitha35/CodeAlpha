@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Advanced Calculator</title>
+  <meta charset="UTF-8">
+  <title>Music Player</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="calculator">
-    <input type="text" id="display" disabled />
 
-    <div class="buttons">
-      <button class="btn op" onclick="clearDisplay()">C</button>
-      <button class="btn op" onclick="deleteLast()">DEL</button>
-      <button class="btn op" onclick="insert('%')">%</button>
-      <button class="btn op" onclick="insert('/')">÷</button>
+<div class="player-container">
 
-      <button class="btn" onclick="insert('7')">7</button>
-      <button class="btn" onclick="insert('8')">8</button>
-      <button class="btn" onclick="insert('9')">9</button>
-      <button class="btn op" onclick="insert('*')">×</button>
-
-      <button class="btn" onclick="insert('4')">4</button>
-      <button class="btn" onclick="insert('5')">5</button>
-      <button class="btn" onclick="insert('6')">6</button>
-      <button class="btn op" onclick="insert('-')">−</button>
-
-      <button class="btn" onclick="insert('1')">1</button>
-      <button class="btn" onclick="insert('2')">2</button>
-      <button class="btn" onclick="insert('3')">3</button>
-      <button class="btn op" onclick="insert('+')">+</button>
-
-      <button class="btn" onclick="insert('0')">0</button>
-      <button class="btn" onclick="insert('.')">.</button>
-      <button class="btn equal" onclick="calculate()">=</button>
-    </div>
+  <div class="album-art">
+    <img id="cover" src="musicpic.jpg" alt="Album Cover">
   </div>
 
-  <script src="script.js"></script>
+  <div class="info">
+    <h2 id="title">Title</h2>
+    <p id="artist">Artist</p>
+  </div>
+
+  <div class="progress">
+    <span id="currentTime">0:00</span>
+    <input type="range" id="progressBar" value="0">
+    <span id="duration">0:00</span>
+  </div>
+
+  <div class="controls">
+    <button id="prev">⏮</button>
+    <button id="play" class="play-btn">▶</button>
+    <button id="next">⏭</button>
+  </div>
+
+  <h3 class="playlist-title">Playlist</h3>
+  <div class="playlist" id="playlist"></div>
+
+</div>
+
+<audio id="audio"></audio>
+<script src="script.js"></script>
 </body>
 </html>
